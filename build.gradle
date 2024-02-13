@@ -1,0 +1,81 @@
+apply plugin: "java"
+apply plugin: "net.serenity-bdd.serenity-gradle-plugin"
+
+defaultTasks 'clean', 'test', 'aggregate'
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+sourceCompatibility = '17'
+targetCompatibility = '17'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+buildscript {
+    project.ext {
+        serenityVersion = '4.0.14'
+    }
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath('net.serenity-bdd:serenity-gradle-plugin:'+serenityVersion)
+        classpath('net.serenity-bdd:serenity-single-page-report:'+serenityVersion)
+    }
+}
+
+ext {
+    assertJVersion = '3.23.1'
+    cucumberJunitPlatformEngineVersion = '7.14.0'
+    jasyptVersion = '1.9.2'
+    junitJupiterVersion = '5.9.3'
+    junitPlatformLauncherVersion = '1.9.3'
+    junitPlatformSuiteVersion = '1.9.3'
+    junitVintageEngineVersion = '5.9.3'
+    logbackVersion = '1.2.11'
+    serenityVersion='4.0.43'
+    slf4jVersion = '2.0.9'
+    restAssured = '5.3.2'
+}
+
+dependencies {
+    implementation "ch.qos.logback-classic:${logbackVersion}"
+    testImplementation "io.cucumber:cucumber-junit-platform-engine:${cucumberJunitPlatformEngineVersion}"
+    testImplementation "net-serenity-bdd:serenity-core:${serenityVersion}"
+    testImplementation "net-serenity-bdd:serenity-cucumber:${serenityVersion}"
+    testImplementation "net-serenity-bdd:serenity-junit:${serenityVersion}"
+    testImplementation "net-serenity-bdd:serenity-screenplay:${serenityVersion}"
+    testImplementation "org.assertj:assertj-core:${assertJVersion}"
+    testImplementation "org.jasypt:jasypt:${jasyptVersion}"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
+    testImplementation "org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}"
+    testImplementation "org.junit.platform:junit-platform-launcher:${junitPlatformLauncherVersion}"
+    testImplementation "org.junit.platform:junit-platform-suite:${junitPlatformSuiteVersion}"
+    testImplementation "org.junit.vintage:junit-vintage-engine:${junitPlatformSuiteVersion}"
+    testImplementation "org.slf4j:slf4j-nop:${slf4jVersion}"
+    testImplementation "io.rest-assured:rest-assured:${restAssured}"
+}
+
+test {
+    testLogging.showStandardStreams =  true
+    ignoreFailures = true
+    systemProperties System.getProperties()
+    useJUnitPlatform()
+    testLogging{
+        events "passed","skipped", "failed"
+    }
+}
+
+gradle.startParameter.continueOnFailure = true
+
+test.finalizedBy(aggregate)
+
+serenity {
+    reports = ["single-page-html"]
+    testRoot = "java"
+}
