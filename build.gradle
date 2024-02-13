@@ -44,12 +44,12 @@ ext {
 }
 
 dependencies {
-    implementation "ch.qos.logback-classic:${logbackVersion}"
+    implementation "ch.qos.logback:logback-classic:${logbackVersion}"
     testImplementation "io.cucumber:cucumber-junit-platform-engine:${cucumberJunitPlatformEngineVersion}"
-    testImplementation "net-serenity-bdd:serenity-core:${serenityVersion}"
-    testImplementation "net-serenity-bdd:serenity-cucumber:${serenityVersion}"
-    testImplementation "net-serenity-bdd:serenity-junit:${serenityVersion}"
-    testImplementation "net-serenity-bdd:serenity-screenplay:${serenityVersion}"
+    testImplementation "net.serenity-bdd:serenity-core:${serenityVersion}"
+    testImplementation "net.serenity-bdd:serenity-cucumber:${serenityVersion}"
+    testImplementation "net.serenity-bdd:serenity-junit:${serenityVersion}"
+    testImplementation "net.serenity-bdd:serenity-screenplay:${serenityVersion}"
     testImplementation "org.assertj:assertj-core:${assertJVersion}"
     testImplementation "org.jasypt:jasypt:${jasyptVersion}"
     testImplementation "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
