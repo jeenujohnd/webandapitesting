@@ -1,5 +1,6 @@
 package com.example.stepdefinitions;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -24,6 +25,19 @@ public class LoginStepDefinitions {
 
     @Then("the user should be able to see the homepage")
     public void the_user_see_the_homepage(){
-
+         loginsteps.ValidateLogin(true);
     }
+
+    @Then("the user should be unable to login")
+    public void the_user_should_be_unable_to_login(){
+        loginsteps.ValidateLogin(false);
+    }
+
+
+    @After
+    public void cleanup(){
+        loginsteps.cleanup();
+    }
+
+
 }

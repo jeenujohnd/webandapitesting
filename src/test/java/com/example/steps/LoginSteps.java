@@ -15,4 +15,13 @@ public class LoginSteps {
         loginPage.doLogin(username, password);
     }
 
+    public void ValidateLogin(Boolean positiveScenario) {
+        loginPage.doLoginValidation(positiveScenario);
+    }
+
+
+    public void cleanup() {
+        loginPage.getDriver().close();
+        loginPage.getDriver().quit();
+    }
 }

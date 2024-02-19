@@ -13,6 +13,16 @@ public class LoginPage extends PageObject {
         $(By.cssSelector("input[data-qa='login-password']")).sendKeys(password);
         $(By.cssSelector("button[data-qa='login-button']")).click();
 
+    }
 
+    public void doLoginValidation(Boolean positiveScenario) {
+        if(positiveScenario) {
+            assert ($(By.cssSelector("a[href='/logout']")).getText().equalsIgnoreCase("Logout"));
+        }
+        else {
+            System.out.println($(By.xpath("//a[@href='/login']")).getText());
+            assert ($(By.xpath("//a[@href='/login']")).getText()
+                    .equalsIgnoreCase("Signup / Login"));
+        }
     }
 }
