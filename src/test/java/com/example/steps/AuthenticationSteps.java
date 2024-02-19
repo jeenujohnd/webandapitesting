@@ -1,9 +1,9 @@
 package com.example.steps;
 
-import com.example.pages.LoginPage;
+import com.example.pages.AuthenticationPage;
 
-public class LoginSteps {
-    LoginPage loginPage;
+public class AuthenticationSteps {
+    AuthenticationPage loginPage;
 
     public void openLoginPage(){
         loginPage.setDefaultBaseUrl("https://www.automationexercise.com/");
@@ -15,8 +15,16 @@ public class LoginSteps {
         loginPage.doLogin(username, password);
     }
 
-    public void ValidateLogin(Boolean positiveScenario) {
-        loginPage.doLoginValidation(positiveScenario);
+    public void isLoggedIn() {
+        loginPage.isLoggedIn();
+    }
+
+    public void isLoggedOut() {
+        loginPage.isLoggedOut();
+    }
+
+    public void userLogout(){
+        loginPage.doLogout();
     }
 
 

@@ -6,12 +6,12 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.annotations.Steps;
 
-import com.example.steps.LoginSteps;
+import com.example.steps.AuthenticationSteps;
 
-public class LoginStepDefinitions {
+public class AuthenticationStepDefinitions {
 
     @Steps(shared =  true)
-    LoginSteps loginsteps;
+    AuthenticationSteps loginsteps;
 
     @Given("the user opens the website")
     public void the_user_opens_the_website(){
@@ -25,14 +25,23 @@ public class LoginStepDefinitions {
 
     @Then("the user should be able to see the homepage")
     public void the_user_see_the_homepage(){
-         loginsteps.ValidateLogin(true);
+         loginsteps.isLoggedIn();
     }
 
     @Then("the user should be unable to login")
     public void the_user_should_be_unable_to_login(){
-        loginsteps.ValidateLogin(false);
+        loginsteps.isLoggedOut();
     }
 
+    @When("the user clicks the logout button")
+    public void  the_user_clicks_the_logout_button(){
+        loginsteps.userLogout();
+    }
+
+    @Then("the user should be logged out")
+    public void the_user_should_be_logged_out(){
+        loginsteps.isLoggedOut();
+    }
 
     @After
     public void cleanup(){
