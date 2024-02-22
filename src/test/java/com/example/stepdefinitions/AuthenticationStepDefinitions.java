@@ -30,7 +30,8 @@ public class AuthenticationStepDefinitions {
 
     @Then("the user should be unable to login")
     public void the_user_should_be_unable_to_login(){
-        loginsteps.isLoggedOut();
+        //loginsteps.isLoggedOut();
+        loginsteps.isHavingLoginError();
     }
 
     @When("the user clicks the logout button")
@@ -41,6 +42,16 @@ public class AuthenticationStepDefinitions {
     @Then("the user should be logged out")
     public void the_user_should_be_logged_out(){
         loginsteps.isLoggedOut();
+    }
+
+    @When("the user provides sign up credentials as {string} and {string}")
+    public void the_user_provides_sign_up_credentials(String userName,String email){
+        loginsteps.existingEmail(userName,email);
+    }
+
+    @Then("the user is unable to sign up")
+    public void the_user_is_unable_to_sign_up(){
+        loginsteps.isNotSignedUp();
     }
 
     @After

@@ -26,4 +26,22 @@ public class AuthenticationPage extends PageObject {
     public void doLogout(){
         $(By.cssSelector("a[href='/logout']")).click();
     }
+
+    public void doSignUp(String userName,String email){
+        $(By.cssSelector("a[href='/login']")).click();
+        $(By.cssSelector("input[data-qa='signup-name']")).sendKeys(userName);
+        $(By.cssSelector("input[data-qa='signup-email']")).sendKeys(email);
+        $(By.cssSelector("button[data-qa='signup-button']")).click();
+    }
+
+
+    public void isNotSignedUp() {
+        assert ($(By.cssSelector("p[style='color: red;']")).getText()
+                .equalsIgnoreCase("Email Address already exist!"));
+    }
+
+    public void isHavingLoginError() {
+        assert ($(By.cssSelector("p[style='color: red;']")).getText()
+                .equalsIgnoreCase("Your email or password is incorrect!"));
+    }
 }

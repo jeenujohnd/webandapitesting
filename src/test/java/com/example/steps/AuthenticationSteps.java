@@ -27,9 +27,29 @@ public class AuthenticationSteps {
         loginPage.doLogout();
     }
 
+    public void openSignUpPage() {
+        loginPage.setDefaultBaseUrl("https://www.automationexercise.com/");
+        loginPage.open();
+        loginPage.getDriver().manage().window().maximize();
+    }
+
+    public void existingEmail(String userName,String email) {
+        loginPage.doSignUp(userName,email);
+    }
+
+    public void isNotSignedUp() {
+        loginPage.isNotSignedUp();
+    }
+
+    public void isHavingLoginError() {
+        loginPage.isHavingLoginError();
+    }
+
 
     public void cleanup() {
         loginPage.getDriver().close();
         loginPage.getDriver().quit();
     }
+
+
 }
