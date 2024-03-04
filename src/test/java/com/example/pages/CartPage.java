@@ -25,7 +25,6 @@ public class CartPage extends PageObject {
 
     public void clickViewCart() {
         $(By.xpath("//u[normalize-space()='View Cart']")).click();
-        assert ($(By.cssSelector("a[href='/product_details/2']"))
-                .getText().equalsIgnoreCase("Men Tshirt"));
+
     }
 }

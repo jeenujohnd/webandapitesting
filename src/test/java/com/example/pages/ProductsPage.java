@@ -18,7 +18,7 @@ public class ProductsPage extends PageObject {
         System.out.println("viewProductsPage: "
                 +$(By.xpath("//h2[normalize-space()='All Products']")).getText());
         assert ($(By.xpath("//h2[normalize-space()='All Products']"))
-                .getText().contains("All Products'"));
+                .getText().equalsIgnoreCase("ALL PRODUCTS"));
 
     }
 
@@ -32,7 +32,7 @@ public class ProductsPage extends PageObject {
         System.out.println("viewProductDetailsPage: "
                 +$(By.xpath("//p[normalize-space()='Category: Women > Tops']")).getText());
         assert ($(By.xpath("//p[normalize-space()='Category: Women > Tops']")).getText()
-                .equalsIgnoreCase("Category: Women > Tops'"));
+                .equalsIgnoreCase("Category: Women > Tops"));
         assert ($(By.xpath("//span[normalize-space()='Rs. 500']"))).getText()
                 .equalsIgnoreCase("Rs. 500");
 
@@ -45,9 +45,9 @@ public class ProductsPage extends PageObject {
 
     public void viewSearchedProduct() {
         System.out.println("viewSearchedProduct: "+
-                $(By.cssSelector("div[class='overlay-content'] p"))
+                $(By.cssSelector("div[class='productinfo text-center'] p"))
                         .getText());
-        assert($(By.cssSelector("div[class='overlay-content'] p"))
+        assert($(By.cssSelector("div[class='productinfo text-center'] p"))
                 .getText().equalsIgnoreCase("Winter Top"));
         System.out.println("Product searched successfully.");
     }
