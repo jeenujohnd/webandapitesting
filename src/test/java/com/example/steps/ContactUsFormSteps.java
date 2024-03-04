@@ -6,10 +6,12 @@ public class ContactUsFormSteps {
 
     ContactUsFormPage contactUsPage;
     public void clickContactUsLink() {
+
         contactUsPage.clickContactUslink();
     }
 
     public void submitContactUsForm() {
+
         contactUsPage.submitContactUsForm();
     }
 }

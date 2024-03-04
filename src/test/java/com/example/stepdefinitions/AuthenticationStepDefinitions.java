@@ -15,6 +15,7 @@ public class AuthenticationStepDefinitions {
 
     @Given("the user opens the website")
     public void the_user_opens_the_website(){
+
         loginsteps.openLoginPage();
     }
 

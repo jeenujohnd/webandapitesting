@@ -14,6 +14,7 @@ public class ContactUsFormStepDefinitions {
 
     @When("the user clicks the Contact us link")
     public void the_user_clicks_the_Contact_us_link(){
+
         contactUsSteps.clickContactUsLink();
     }
 
@@ -21,4 +22,6 @@ public class ContactUsFormStepDefinitions {
     public void the_user_should_be_able_to_view_and_submit_the_Contact_us_form(){
         contactUsSteps.submitContactUsForm();
     }
+
+
 }
