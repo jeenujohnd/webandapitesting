@@ -19,3 +19,4 @@ Scenario: Validating the product being searched is visible to the user
     When the user clicks products link
     When the user searches in Search Product field for "Winter Top"
     Then the user is able to see the respective product
+

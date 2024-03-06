@@ -1,10 +1,12 @@
 package com.example.steps;
 
 import com.example.pages.CartPage;
+import com.example.pages.ProductsPage;
 
 public class CartSteps {
 
     CartPage cartPage;
+    ProductsPage productPage;
 
     public void addProductToCart(){
         cartPage.addProductToCart();
@@ -23,5 +25,24 @@ public class CartSteps {
     }
 
     public void viewAddedProduct() {
+        cartPage.viewAddedProduct();
     }
+
+    public void viewContinueShoppingOption() {
+        cartPage.viewContinueShopping();
+    }
+
+    public void clickContinueShopping() {
+        cartPage.clickContinueShopping();
+    }
+
+    public void allProductsPage() {
+        productPage.viewProductsPage();
+    }
+
+    public void viewAllAddedProducts() {
+        cartPage.viewAllAddedProducts();
+    }
+
+
 }
