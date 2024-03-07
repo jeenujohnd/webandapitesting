@@ -24,3 +24,14 @@ Feature: Cart feature
       Then the user sees the View Cart option
       When the user clicks View Cart link
       Then the user should see all the products added
+
+      Scenario: Verifying the product quantity
+      Given the user opens the website
+      When the user clicks products link
+      When the user adds a product to the cart
+      Then the user sees the Added message
+      Then the user sees the View Cart option
+      When the user clicks View Cart link
+      Then the user should see the correct quantity in the cart
+
+

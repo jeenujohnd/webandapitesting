@@ -40,9 +40,16 @@ public class CartSteps {
         productPage.viewProductsPage();
     }
 
+    public void addMoreProductsToCart() {
+        cartPage.addMoreProductsToCart();
+    }
+
     public void viewAllAddedProducts() {
         cartPage.viewAllAddedProducts();
     }
 
 
+    public void viewProductQuantity() {
+        cartPage.viewProductQuantity();
+    }
 }

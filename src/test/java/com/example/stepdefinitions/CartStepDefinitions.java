@@ -53,11 +53,16 @@ public class CartStepDefinitions {
 
     @When("the user adds another product to the cart")
     public void the_user_adds_another_product_to_the_cart(){
-        cartSteps.addProductToCart();
+        cartSteps.addMoreProductsToCart();
     }
 
     @Then("the user should see all the products added")
     public void the_user_should_see_all_the_products_added(){
         cartSteps.viewAllAddedProducts();
+    }
+
+    @Then("the user should see the correct quantity in the cart")
+    public void the_user_should_see_the_correct_quantity_in_the_cart(){
+        cartSteps.viewProductQuantity();
     }
 }

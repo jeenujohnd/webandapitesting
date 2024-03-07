@@ -2,17 +2,46 @@ package com.example.pages;
 
 import io.appium.java_client.AppiumBy;
 import net.serenitybdd.core.pages.PageObject;
+import net.serenitybdd.core.pages.WebElementFacade;
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.time.Duration;
+import java.util.Iterator;
 import java.util.List;
 
 public class CartPage extends PageObject {
 
-
     public void addProductToCart() {
-        $(By.className("add-to-cart")).click();
+        $(By.xpath("(//a[contains(text(),'Add to cart')])[1]")).click();
+    }
+
+    public void addMoreProductsToCart() {
+        List<WebElementFacade> multipleProducts =findAll(By.className("col-sm-4"));
+//        Iterator products = multipleProducts.iterator();
+        System.out.println("Size: "+multipleProducts.size());
+
+        for(int i = 0;i<5;i++){
+           //WebElement product =  (WebElement) products.next();
+            multipleProducts.get(i).findElement(By.xpath("(//a[contains(text(),'Add to cart')])[1]"))
+                    .findElement(By.className("add-to-cart")).click();
+            System.out.println("Finished Loop "+i);
+            clickContinueShopping();
+            System.out.println("Finished Loop after clicking continue"+i);
+            waitFor(1000);
+        }
+
+//        List<WebElementFacade> multipleProducts = findAll(By.xpath("//a[@data-product-id]"));
+//        $(By.xpath("//a[@data-product-id]"));
+
+//        for(int i=1;i<=5;i++)
+//        {
+//            System.out.println(multipleProducts.get(i).getText());
+//            multipleProducts.get(i).click();
+//            cartPage.clickContinueShopping();
+//
+//        }
     }
 
     public void productAddedMessage() {
@@ -53,11 +82,16 @@ public class CartPage extends PageObject {
 
     public void viewAllAddedProducts() {
 
-        List<WebElement> productsAdded = $(By.xpath("//td[@class='cart_description']"));
+        List<WebElementFacade> productsAdded = findAll(By.xpath("//td[@class='cart_description']"));
+        System.out.println(productsAdded.size());
         for(int i=0;i<productsAdded.size();i++)
         {
             System.out.println(productsAdded.get(i).getText());
         }
 
+    }
+
+    public void viewProductQuantity() {
+        assert ($(By.className("disabled")).getText().equalsIgnoreCase("1"));
     }
 }

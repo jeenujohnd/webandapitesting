@@ -51,4 +51,6 @@ public class ProductsPage extends PageObject {
                 .getText().equalsIgnoreCase("Winter Top"));
         System.out.println("Product searched successfully.");
     }
+
+
 }
