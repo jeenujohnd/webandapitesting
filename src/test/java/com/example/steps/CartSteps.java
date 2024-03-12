@@ -33,10 +33,12 @@ public class CartSteps {
     }
 
     public void clickContinueShopping() {
+
         cartPage.clickContinueShopping();
     }
 
     public void allProductsPage() {
+
         productPage.viewProductsPage();
     }
 
@@ -45,6 +47,7 @@ public class CartSteps {
     }
 
     public void viewAllAddedProducts() {
+
         cartPage.viewAllAddedProducts();
     }
 

@@ -18,18 +18,7 @@ public class CartPage extends PageObject {
     }
 
     public void addMoreProductsToCart() {
-        List<WebElementFacade> multipleProducts =findAll(By.className("col-sm-4"));
-//        Iterator products = multipleProducts.iterator();
-        System.out.println("Size: "+multipleProducts.size());
-
-        for(int i = 0;i<5;i++){
-           //WebElement product =  (WebElement) products.next();
-            multipleProducts.get(i).findElement(By.xpath("(//a[contains(text(),'Add to cart')])[1]"))
-                    .findElement(By.className("add-to-cart")).click();
-            System.out.println("Finished Loop "+i);
-            clickContinueShopping();
-            System.out.println("Finished Loop after clicking continue"+i);
-            waitFor(1000);
+        $(By.xpath("(//a[contains(text(),'Add to cart')])[3]")).click();
         }
 
 //        List<WebElementFacade> multipleProducts = findAll(By.xpath("//a[@data-product-id]"));
@@ -42,7 +31,7 @@ public class CartPage extends PageObject {
 //            cartPage.clickContinueShopping();
 //
 //        }
-    }
+
 
     public void productAddedMessage() {
         System.out.println("Printing productAddedMessage:"+ $(By.xpath("//h4[normalize-space()='Added!']")).getText());
@@ -56,7 +45,6 @@ public class CartPage extends PageObject {
 
     public void clickViewCart() {
         $(By.xpath("//u[normalize-space()='View Cart']")).click();
-
     }
 
     public void viewAddedProduct() {
@@ -66,8 +54,6 @@ public class CartPage extends PageObject {
         String text2 = $(By.xpath("(//p[contains(text(),'Blue Top')])[1]")).getText();
         assert (text1.equalsIgnoreCase(text2));
         System.out.println(text2);
-
-
     }
 
     public void viewContinueShopping() {
@@ -95,3 +81,4 @@ public class CartPage extends PageObject {
         assert ($(By.className("disabled")).getText().equalsIgnoreCase("1"));
     }
 }
+
