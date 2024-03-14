@@ -55,4 +55,77 @@ public class CartSteps {
     public void viewProductQuantity() {
         cartPage.viewProductQuantity();
     }
+
+    public void viewProceedToCheckoutOption() {
+        cartPage.viewProceedToCheckoutOption();
+    }
+
+    public void clickProceedToCheckout() {
+        cartPage.clickProceedToCheckout();
+    }
+
+    public void viewDeliveryAddress() {
+        cartPage.viewDeliveryAddress();
+    }
+
+    public void viewBillingAddress() {
+        cartPage.viewBillingAddress();
+    }
+
+    public void viewReviewOrder() {
+        cartPage.viewReviewOrder();
+    }
+
+    public void viewTotalAmount() {
+        cartPage.viewTotalAmount();
+    }
+
+
+    public void inputComments() {
+        cartPage.inputComments();
+    }
+
+    public void placeOrderEnabled() {
+        cartPage.placeOrderEnabled();
+    }
+
+    public void clickPlaceOrder() {
+        cartPage.clickPlaceOrder();
+    }
+
+    public void paymentPage() {
+        cartPage.paymentPage();
+    }
+
+    public void inputCardName(String cardName) {
+        cartPage.inputCardName(cardName);
+    }
+
+    public void inputCardNumber(Integer cardNumber) {
+        cartPage.inputCardNumber(cardNumber);
+    }
+
+    public void inputCVV(Integer cvv) {
+        cartPage.inputCVV(cvv);
+    }
+
+    public void inputExpirationMonth(Integer expirationMonth) {
+        cartPage.inputExpirationMonth(expirationMonth);
+    }
+
+    public void inputExpirationYear(Integer expirationYear) {
+        cartPage.inputExpirationYear(expirationYear);
+    }
+
+    public void clickPayAndConfirmOrder() {
+        cartPage.clickPayAndConfirmOrder();
+    }
+
+    public void viewOrderPlacedMessage() {
+        cartPage.viewOrderPlacedMessage();
+    }
+
+    public void clickContinue() {
+        cartPage.clickContinue();
+    }
 }
