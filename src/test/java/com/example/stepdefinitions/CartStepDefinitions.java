@@ -158,4 +158,106 @@ public class CartStepDefinitions {
         cartSteps.clickContinue();
     }
 
+    @When("the user clicks the cross button next to products displayed")
+    public void the_user_clicks_the_cross_button_next_to_products_displayed(){
+        cartSteps.clickDeleteProducts();
+    }
+
+    @Then("Cart is empty message should be displayed")
+    public void Cart_is_empty_message_should_be_displayed(){
+        cartSteps.cartEmptyMessage();
+    }
+
+//    @When("the user clicks HERE link")
+//    public void the_user_clicks_HERE_link(){
+//        cartSteps.clickBuyProducts();
+//    }
+
+   @Then("the user sees category section in the left side bar")
+    public void the_user_sees_category_section_in_the_left_side_bar(){
+        cartSteps.viewCategory();
+   }
+
+   @Then("the user sees various categories")
+    public void the_user_sees_various_categories(){
+        cartSteps.viewCategoryList();
+   }
+
+   @When("the user expands a category")
+    public void the_user_expands_a_category(){
+        cartSteps.clickCategory();
+   }
+
+   @Then("the user sees the sub category")
+    public void the_user_sees_the_sub_category(){
+        cartSteps.viewSubCategoryList();
+   }
+
+   @When("the user clicks a sub category")
+    public void the_user_clicks_a_sub_category(){
+        cartSteps.clickSubCategory();
+   }
+
+   @Then("the user sees the sub category page with the corresponding title")
+    public void the_user_sees_the_sub_category_page_with_the_corresponding_title(){
+        cartSteps.viewSubCategoryPage();
+   }
+
+   @When("the user clicks another category")
+    public void the_user_clicks_another_category(){
+        cartSteps.clickAnotherCategory();
+   }
+
+   @Then("the user sees the corresponding sub category")
+    public void the_user_sees_the_corresponding_sub_category(){
+        cartSteps.viewAnotherSubCategoryList();
+   }
+
+   @When("the user clicks another sub category")
+    public void the_user_clicks_another_sub_category(){
+        cartSteps.clickAnotherSubCategory();
+   }
+
+   @Then("the user sees the other sub category page with the corresponding title")
+    public void the_user_sees_the_other_sub_category_page_with_the_corresponding_title(){
+        cartSteps.viewAnotherSubCategoryPage();
+   }
+
+   @Then("the user sees brands section in the left side bar")
+    public void the_user_sees_brands_section_in_the_left_side_bar(){
+        cartSteps.viewBrands();
+   }
+
+   @Then("the user sees various brands")
+    public void the_user_sees_various_brands(){
+        cartSteps.viewBrandsList();
+   }
+
+   @When("the user clicks a brand")
+    public void the_user_clicks_a_brand(){
+        cartSteps.clickBrand();
+   }
+
+   @Then("the user sees the brand page with the corresponding page title")
+    public void the_user_sees_the_brand_page_with_the_corresponding_page_title(){
+        cartSteps.viewBrandPage();
+   }
+
+   @Then("the user sees same count of products displayed")
+    public void the_user_sees_same_count_of_products_displayed(){
+        cartSteps.countBrandProduct();
+   }
+
+   @When("the user views a product")
+    public void the_user_views_a_product(){
+        cartSteps.viewsBrandProduct();
+   }
+
+   @Then("the user sees the brand of the product as same")
+    public void the_user_sees_the_brand_of_the_product_as_same(){
+        cartSteps.checkBrand();
+   }
+
+
+
 }

@@ -128,4 +128,85 @@ public class CartSteps {
     public void clickContinue() {
         cartPage.clickContinue();
     }
+
+    public void clickDeleteProducts() {
+        cartPage.clickDeleteProducts();
+    }
+
+    public void cartEmptyMessage() {
+        cartPage.cartEmptyMessage();
+    }
+
+//    public void clickBuyProducts() {
+//        cartPage.clickBuyProducts();
+//    }
+
+    public void viewCategory() {
+        cartPage.viewCategory();
+    }
+
+    public void viewCategoryList() {
+        cartPage.viewCategoryList();
+    }
+
+    public void clickCategory() {
+        cartPage.clickCategory();
+    }
+
+    public void viewSubCategoryList() {
+        cartPage.viewSubCategoryList();
+    }
+
+    public void clickSubCategory() {
+        cartPage.clickSubCategory();
+    }
+
+    public void viewSubCategoryPage() {
+        cartPage.viewSubCategoryPage();
+    }
+
+    public void clickAnotherCategory() {
+        cartPage.clickAnotherCategory();
+    }
+
+
+    public void viewAnotherSubCategoryList() {
+        cartPage.viewAnotherSubCategoryList();
+    }
+
+    public void clickAnotherSubCategory() {
+        cartPage.clickAnotherSubCategory();
+    }
+
+    public void viewAnotherSubCategoryPage() {
+        cartPage.viewAnotherSubCategoryPage();
+    }
+
+    public void viewBrands() {
+        cartPage.viewBrands();
+    }
+
+    public void viewBrandsList() {
+        cartPage.viewBrandsList();
+    }
+
+    public void clickBrand() {
+        cartPage.clickBrand();
+    }
+
+    public void viewBrandPage() {
+        cartPage.viewBrandPage();
+    }
+
+    public void countBrandProduct() {
+        cartPage.countBrandProduct();
+    }
+
+    public void viewsBrandProduct() {
+        cartPage.viewsBrandProduct();
+    }
+
+    public void checkBrand() {
+        cartPage.checkBrand();
+    }
 }
