@@ -272,7 +272,7 @@ public class CartPage extends PageObject {
     }
 
     public void countBrandProduct() {
-        ListOfWebElementFacades productCount=findAll(By.className("countBrandProduct"));
+        ListOfWebElementFacades productCount=findAll(By.className("features_items"));
         System.out.println(("Number of products :")+productCount.size());
     }
 
