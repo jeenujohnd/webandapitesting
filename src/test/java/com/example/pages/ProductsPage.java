@@ -1,5 +1,6 @@
 package com.example.pages;
 
+import net.serenitybdd.core.pages.ListOfWebElementFacades;
 import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ScreenOrientation;
@@ -53,4 +54,43 @@ public class ProductsPage extends PageObject {
     }
 
 
+    public void viewSearchedProductsPage() {
+        assert ($(By.className("text-center")).getText()
+                .trim().equalsIgnoreCase("SEARCHED PRODUCTS"));
+    }
+
+    public void viewSearchedProducts() {
+        ListOfWebElementFacades searchedProductsList =
+                findAll(By.xpath("//div[@class='features_items']"));
+        System.out.println(searchedProductsList.size());
+        for (int i=0;i<searchedProductsList.size();i++)
+        {
+            System.out.println(searchedProductsList.get(i).getText());
+        }
+    }
+
+    public void cLickCartLink() {
+        $(By.xpath("//ul//li//a[normalize-space()='Cart']")).click();
+    }
+
+    public void viewWriteReviewTitle() {
+        assert($(By.cssSelector("a[href='#reviews']")).getText().trim()
+                .equalsIgnoreCase("WRITE YOUR REVIEW"));
+    }
+
+    public void inputName(String name) {
+        $(By.id("name")).sendKeys(name);
+    }
+
+    public void inputEmail(String email) {
+        $(By.id("email")).sendKeys(email);
+    }
+
+    public void inputReview(String review) {
+        $(By.id("review")).sendKeys(review);
+    }
+
+    public void clickSubmit() {
+        $(By.id("button-review")).click();
+    }
 }

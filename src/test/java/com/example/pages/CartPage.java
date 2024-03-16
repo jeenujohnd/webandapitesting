@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 
+import java.time.Duration;
 import java.util.List;
 
 public class CartPage extends PageObject {
@@ -113,6 +114,8 @@ public class CartPage extends PageObject {
         String temp = $(By.xpath("//tbody/tr[3]"))
                  .getText().replace("Total Amount","");
         String newTemp = temp.replace("Rs. ","");
+        //newTemp=newTemp.replace("\"","");
+        System.out.println("Amount trying to parse int "+newTemp);
 
         int total = Integer.parseInt(newTemp.trim());
 
@@ -171,7 +174,12 @@ public class CartPage extends PageObject {
     }
 
     public void clickDeleteProducts() {
-        $(By.xpath("//td[@class='cart_delete']")).click();
+        ListOfWebElementFacades deleteButtons=findAll(By.className("cart_quantity_delete"));
+        System.out.println("Number of cross buttons is: "+deleteButtons.size());
+        for (int i =0;i<deleteButtons.size();i++)
+        {
+            deleteButtons.get(i).click();
+        }
     }
 
     public void cartEmptyMessage() {
@@ -286,9 +294,9 @@ public class CartPage extends PageObject {
     }
 
 
-//    public void clickBuyProducts() {
-//        getWaitForTimeout();
-//        $(By.xpath("//u[normalize-space()='here']")).click();
-//    }
+    public void clickBuyProducts() {
+        withTimeoutOf(Duration.ofSeconds(50))
+                .find(By.xpath("//u[normalize-space()='here']")).click();
+    }
 }
 

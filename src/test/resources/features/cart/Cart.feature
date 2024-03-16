@@ -84,8 +84,8 @@ Feature: Cart feature
       Then the user should see all the products added
       When the user clicks the cross button next to products displayed
       Then Cart is empty message should be displayed
-#      When the user clicks HERE link
-#      Then the user is redirected to All Products page
+      When the user clicks HERE link
+      Then the user is redirected to All Products page
 
     Scenario: View category products
       Given the user opens the website

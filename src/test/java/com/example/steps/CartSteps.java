@@ -137,9 +137,9 @@ public class CartSteps {
         cartPage.cartEmptyMessage();
     }
 
-//    public void clickBuyProducts() {
-//        cartPage.clickBuyProducts();
-//    }
+    public void clickBuyProducts() {
+        cartPage.clickBuyProducts();
+    }
 
     public void viewCategory() {
         cartPage.viewCategory();

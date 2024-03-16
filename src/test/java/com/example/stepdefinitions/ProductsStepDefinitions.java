@@ -41,4 +41,45 @@ public class ProductsStepDefinitions {
         productsSteps.viewSearchedProduct();
     }
 
+    @Then("the user is navigated to Searched products page")
+    public void the_user_is_navigated_to_Searched_products_page(){
+        productsSteps.viewSearchedProductsPage();
+    }
+
+    @When("the user clicks Cart link")
+    public void the_user_clicks_Cart_link(){
+        productsSteps.cLickCartLink();
+    }
+
+    @Then("the user sees all products corresponding to the search")
+    public void the_user_sees_all_products_corresponding_to_the_search(){
+        productsSteps.viewSearchedProducts();
+    }
+
+    @Then("the user sees write your review section")
+    public void the_user_sees_write_your_review_section()
+    {
+        productsSteps.viewWriteReviewTitle();
+    }
+
+    @When("the user provides name {string}")
+    public void the_user_provides_name(String name){
+        productsSteps.inputName(name);
+    }
+
+    @When("the user provides email {string}")
+    public void the_user_provides_email(String email){
+        productsSteps.inputEmail(email);
+    }
+
+    @When("the user provides review {string}")
+    public void the_user_provides_review(String review){
+        productsSteps.inputReview(review);
+    }
+
+    @When("the user clicks the submit button")
+    public void the_user_clicks_the_submit_button(){
+        productsSteps.clickSubmit();
+    }
+
 }

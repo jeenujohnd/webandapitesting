@@ -28,4 +28,37 @@ public class ProductsSteps {
     public void viewSearchedProduct() {
         productsPage.viewSearchedProduct();
     }
+
+    public void viewSearchedProductsPage() {
+        productsPage.viewSearchedProductsPage();
+    }
+
+    public void viewSearchedProducts() {
+        productsPage.viewSearchedProducts();
+    }
+
+    public void cLickCartLink() {
+        productsPage.cLickCartLink();
+    }
+
+    public void viewWriteReviewTitle() {
+        productsPage.viewWriteReviewTitle();
+    }
+
+
+    public void inputName(String name) {
+        productsPage.inputName(name);
+    }
+
+    public void inputEmail(String email) {
+        productsPage.inputEmail(email);
+    }
+
+    public void inputReview(String review) {
+        productsPage.inputReview(review);
+    }
+
+    public void clickSubmit() {
+        productsPage.clickSubmit();
+    }
 }

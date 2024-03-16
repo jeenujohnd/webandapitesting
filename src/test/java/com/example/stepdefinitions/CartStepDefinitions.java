@@ -168,10 +168,10 @@ public class CartStepDefinitions {
         cartSteps.cartEmptyMessage();
     }
 
-//    @When("the user clicks HERE link")
-//    public void the_user_clicks_HERE_link(){
-//        cartSteps.clickBuyProducts();
-//    }
+    @When("the user clicks HERE link")
+    public void the_user_clicks_HERE_link(){
+        cartSteps.clickBuyProducts();
+    }
 
    @Then("the user sees category section in the left side bar")
     public void the_user_sees_category_section_in_the_left_side_bar(){
