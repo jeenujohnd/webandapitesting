@@ -209,4 +209,56 @@ public class CartSteps {
     public void checkBrand() {
         cartPage.checkBrand();
     }
+
+    public void scrollDownToRecommendedItems() {
+        cartPage.scrollDownToRecommendedItems();
+    }
+
+    public void viewRecommendedItems() {
+        cartPage.viewRecommendedItems();
+    }
+
+    public void checkDeliveryAddress() {
+        cartPage.checkDeliveryAddress();
+    }
+
+    public void scrollDownToSubscription() {
+        cartPage.scrollDownToSubscription();
+    }
+
+    public void scrollUpback() {
+        cartPage.scrollUpback();
+    }
+
+    public void viewCheckoutMessage() {
+        cartPage.viewCheckoutMessage();
+    }
+
+    public void viewRegisterLogin() {
+        cartPage.viewRegisterLogin();
+    }
+
+    public void clickRegisterLogin() {
+        cartPage.clickRegisterLogin();
+    }
+
+    public void viewLogin() {
+        cartPage.viewLogin();
+    }
+
+    public void scrollDownToPlaceOrder() {
+        cartPage.scrollDownToPlaceOrder();
+    }
+
+    public void viewDownloadInvoice() {
+        cartPage.viewDownloadInvoice();
+    }
+
+    public void clickDownloadInvoice() {
+        cartPage.clickDownloadInvoice();
+    }
+
+    public void viewInvoice() {
+        cartPage.viewInvoice();
+    }
 }

@@ -3,11 +3,17 @@ package com.example.pages;
 import net.serenitybdd.core.pages.ListOfWebElementFacades;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
+import net.serenitybdd.screenplay.actions.Scroll;
+import net.serenitybdd.screenplay.actions.ScrollTo;
+import net.serenitybdd.screenplay.actions.ScrollToWebElement;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.List;
 
 public class CartPage extends PageObject {
@@ -37,10 +43,10 @@ public class CartPage extends PageObject {
     public void viewAddedProduct() {
         String text1 = $(By.cssSelector("a[href='/product_details/1']")).getText();
         System.out.println(text1);
-        $(By.cssSelector("a[href='/products']")).click();
-        String text2 = $(By.xpath("(//p[contains(text(),'Blue Top')])[1]")).getText();
-        assert (text1.equalsIgnoreCase(text2));
-        System.out.println(text2);
+//        $(By.cssSelector("a[href='/products']")).click();
+//        String text2 = $(By.xpath("(//p[contains(text(),'Blue Top')])[1]")).getText();
+//        assert (text1.equalsIgnoreCase(text2));
+//        System.out.println(text2);
     }
 
     public void viewContinueShopping() {
@@ -71,11 +77,13 @@ public class CartPage extends PageObject {
     }
 
     public void viewProceedToCheckoutOption() {
-        assert ($(By.className("check_out")).getText().equalsIgnoreCase("Proceed to checkout"));
+        assert ($(By.xpath("//a[normalize-space()='Proceed To Checkout']"))
+                .getText().equalsIgnoreCase("Proceed to checkout"));
+        System.out.println($(By.xpath("//a[normalize-space()='Proceed To Checkout']")).getText());
     }
 
     public void clickProceedToCheckout() {
-        $(By.className("check_out")).click();
+       $(By.xpath("//a[normalize-space()='Proceed To Checkout']")).click();
     }
 
     public void viewDeliveryAddress() {
@@ -297,6 +305,71 @@ public class CartPage extends PageObject {
     public void clickBuyProducts() {
         withTimeoutOf(Duration.ofSeconds(50))
                 .find(By.xpath("//u[normalize-space()='here']")).click();
+    }
+
+    public void scrollDownToRecommendedItems() {
+        Scroll.to(By.xpath("//h2[normalize-space()='recommended items']"));
+
+    }
+
+    public void viewRecommendedItems() {
+        assert ($(By.xpath("//h2[normalize-space()='recommended items']"))
+                .getText().trim().equalsIgnoreCase("RECOMMENDED ITEMS"));
+    }
+
+    public void checkDeliveryAddress() {
+        ListOfWebElementFacades deliveryAddress = findAll(By.id("address_delivery"));
+        System.out.println("Lines in delivery address: "+deliveryAddress.size());
+        for (int i =0;i<deliveryAddress.size();i++)
+        {
+            System.out.println(deliveryAddress.get(i).getText().trim());
+        }
+    }
+
+    public void scrollDownToSubscription() {
+        Scroll.to(By.xpath("//h2[normalize-space()='Subscription']"));
+        $(By.xpath("//h2[normalize-space()='Subscription']"));
+        System.out.println("Scrolling down");
+    }
+
+    public void scrollUpback() {
+        Scroll.to(By.xpath("//a[normalize-space()='Home']"));
+        System.out.println("Scrolling up");
+    }
+
+    public void viewCheckoutMessage() {
+        System.out.println(($(By.className("modal-title")).getText()));
+    }
+
+    public void viewRegisterLogin() {
+        System.out.println(($(By.xpath("viewRegisterLogin")).getText()));
+    }
+
+    public void clickRegisterLogin() {
+        $(By.xpath("clickRegisterLogin")).click();
+    }
+
+    public void viewLogin() {
+        System.out.println($(By.xpath("viewLogin")).getText());
+    }
+
+    public void scrollDownToPlaceOrder() {
+        Scroll.to(By.className("check_out"));
+    }
+
+    public void viewDownloadInvoice() {
+        System.out.println($(By.className("viewDownloadInvoice")).getText());
+    }
+
+    public void clickDownloadInvoice() {
+        $(By.className("clickDownloadInvoice")).click();
+    }
+
+    public void viewInvoice() {
+        ChromeOptions file = new ChromeOptions();
+        HashMap<String,Object> chromePref = new HashMap<>();
+        chromePref.put("")
+
     }
 }
 

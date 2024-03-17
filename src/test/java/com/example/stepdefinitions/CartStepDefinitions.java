@@ -258,6 +258,63 @@ public class CartStepDefinitions {
         cartSteps.checkBrand();
    }
 
+    @When("the user scrolls down to the bottom of the page")
+    public void the_user_scrolls_down_to_the_bottom_of_the_page() {
+        cartSteps.scrollDownToRecommendedItems();
+    }
+    @Then("the user sees the RECOMMENDED ITEMS section")
+    public void the_user_sees_the_recommended_items_section() {
+        cartSteps.viewRecommendedItems();
+    }
+
+    @Then("the user's delivery address appears")
+    public void the_user_s_delivery_address_appears(){
+        cartSteps.checkDeliveryAddress();
+    }
+
+    @Then("the user scrolls down to the subscription section")
+    public void the_user_scrolls_down_to_the_subscription_section() {
+        cartSteps.scrollDownToSubscription();
+    }
+    @Then("the user scrolls up back")
+    public void the_user_scrolls_up_back() {
+        cartSteps.scrollUpback();
+
+    }
+
+    @Then("the user sees the Checkout message")
+    public void the_user_sees_the_checkout_message() {
+        cartSteps.viewCheckoutMessage();
+    }
+    @Then("the user sees the Register login option")
+    public void the_user_sees_the_register_login_option() {
+        cartSteps.viewRegisterLogin();
+    }
+    @When("the user clicks the Register login link")
+    public void the_user_clicks_the_register_login_link() {
+        cartSteps.clickRegisterLogin();
+    }
+    @Then("the user is redirected to the login page")
+    public void the_user_is_redirected_to_the_login_page() {
+        cartSteps.viewLogin();
+    }
+    @When("the user scrolls down to place order")
+    public void the_user_scrolls_down_to_place_order() {
+        cartSteps.scrollDownToPlaceOrder();
+    }
+    @Then("the user sees the Download invoice option")
+    public void the_user_sees_the_download_invoice_option() {
+        cartSteps.viewDownloadInvoice();
+    }
+    @When("the user clicks the Download invoice link")
+    public void the_user_clicks_the_download_invoice_link() {
+        cartSteps.clickDownloadInvoice();
+    }
+    @Then("the user is able to access the downloaded invoice")
+    public void the_user_is_able_to_access_the_downloaded_invoice() {
+       cartSteps.viewInvoice();
+    }
+
 
 
 }

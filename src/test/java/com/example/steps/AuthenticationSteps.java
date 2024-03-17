@@ -32,16 +32,6 @@ public class AuthenticationSteps {
         loginPage.openUrl("https://www.automationexercise.com/");
     }
 
-//        System.out.println("Printing=================");
-//        System.out.println(loginPage.getDriver().getWindowHandle());
-//        String currentHandle = loginPage.getDriver().getWindowHandle();
-//        for (String handle : loginPage.getDriver().getWindowHandles()) {
-//          if (!handle.equals(currentHandle)) {
-//                System.out.println(handle);
-//                loginPage.getDriver().switchTo().window(handle);
-//                //break;
-//            }
-
     public void loginAsUser(String username, String password){
         loginPage.doLogin(username, password);
     }
@@ -57,14 +47,6 @@ public class AuthenticationSteps {
     public void userLogout(){
         loginPage.doLogout();
     }
-
-//    public void openSignUpPage() {
-//        loginPage.setDefaultBaseUrl("https://www.automationexercise.com/");
-//        loginPage.open();
-//        System.out.println(loginPage.getDriver().getWindowHandle());
-//        // Switch back to the main tab if needed
-//       // loginPage.getDriver().switchTo().window(loginPage.getDriver().getWindowHandles().iterator().next());
-//    }
 
     public void existingEmail(String userName,String email) {
         loginPage.doSignUp(userName,email);

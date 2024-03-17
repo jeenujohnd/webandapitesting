@@ -111,6 +111,80 @@ Feature: Cart feature
       When the user views a product
       Then the user sees the brand of the product as same
 
+    Scenario: Add to cart from Recommended items
+      Given the user opens the website
+      When the user scrolls down to the bottom of the page
+      Then the user sees the RECOMMENDED ITEMS section
+      When the user adds a product to the cart
+      Then the user sees the Added message
+      Then the user sees the View Cart option
+      When the user clicks View Cart link
+      Then the user can view the added product in cart
+
+    Scenario: Verify address details in checkout page
+      Given the user opens the website
+      When the user provides credentials "jjd@gmail.com" and "abcd@1234"
+      Then the user should be able to see the homepage
+      When the user clicks products link
+      Then the user is redirected to All Products page
+      When the user adds a product to the cart
+      Then the user sees the Added message
+      Then the user sees the View Cart option
+      When the user clicks View Cart link
+      Then the user can view the added product in cart
+      Then the user sees the Proceed to checkout option
+      When the user clicks the Proceed to checkout link
+      Then the user's delivery address appears
+
+  Scenario: Download invoice after purchase order
+    Given the user opens the website
+    When the user clicks products link
+    Then the user is redirected to All Products page
+    When the user adds a product to the cart
+    Then the user sees the Added message
+    Then the user sees the View Cart option
+    When the user clicks View Cart link
+    Then the user can view the added product in cart
+    Then the user sees the Proceed to checkout option
+    When the user clicks the Proceed to checkout link
+    Then the user sees the Checkout message
+    Then the user sees the Register login option
+    When the user clicks the Register login link
+    Then the user is redirected to the login page
+    When the user provides credentials "jjd@gmail.com" and "abcd@1234"
+    Then the user should be able to see the homepage
+    When the user clicks Cart link
+    When the user clicks the Proceed to checkout link
+    When the user scrolls down to place order
+    When the user clicks the Place order button
+    Then the user provides card name "abcdefg"
+    Then the user provides card number 123456789
+    Then the user provides CVV 999
+    Then the user provides Expiration month 12
+    Then the user provides Expiration year 2067
+    When the user clicks pay and confirm order link
+    Then the user sees order placed message
+    Then the user sees the Download invoice option
+    When the user clicks the Download invoice link
+    Then the user is able to access the downloaded invoice
+
+
+
+
+
+  Scenario: Verify scroll down to subscription section and scroll up
+    Given the user opens the website
+    Then the user scrolls down to the subscription section
+    Then the user scrolls up back
+
+
+
+
+
+
+
+
+
 
 
 
