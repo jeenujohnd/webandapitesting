@@ -9,9 +9,12 @@ import net.serenitybdd.screenplay.actions.ScrollToWebElement;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.chromium.ChromiumDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 
+import java.io.File;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
@@ -342,15 +345,16 @@ public class CartPage extends PageObject {
     }
 
     public void viewRegisterLogin() {
-        System.out.println(($(By.xpath("viewRegisterLogin")).getText()));
+        System.out.println(($(By.xpath("//u[normalize-space()='Register / Login']")).getText()));
     }
 
     public void clickRegisterLogin() {
-        $(By.xpath("clickRegisterLogin")).click();
+
+        $(By.xpath("//u[normalize-space()='Register / Login']")).click();
     }
 
     public void viewLogin() {
-        System.out.println($(By.xpath("viewLogin")).getText());
+        System.out.println($(By.xpath("//h2[normalize-space()='Login to your account']")).getText());
     }
 
     public void scrollDownToPlaceOrder() {
@@ -358,18 +362,21 @@ public class CartPage extends PageObject {
     }
 
     public void viewDownloadInvoice() {
-        System.out.println($(By.className("viewDownloadInvoice")).getText());
+        System.out.println($(By.className("check_out")).getText());
+
     }
 
     public void clickDownloadInvoice() {
-        $(By.className("clickDownloadInvoice")).click();
+        $(By.className("check_out")).click();
+        System.out.println("File downloaded successfully");
+
     }
 
     public void viewInvoice() {
-        ChromeOptions file = new ChromeOptions();
-        HashMap<String,Object> chromePref = new HashMap<>();
-        chromePref.put("")
-
+        File f = new File("/Users/dennisthomas/Documents/Jeenu/learningjava/automationexercise/download/invoice.txt");
+        assert(f.exists() && !f.isDirectory());
+        if(f.exists() && !f.isDirectory())
+            f.delete();
     }
 }
 

@@ -169,9 +169,6 @@ Feature: Cart feature
     Then the user is able to access the downloaded invoice
 
 
-
-
-
   Scenario: Verify scroll down to subscription section and scroll up
     Given the user opens the website
     Then the user scrolls down to the subscription section
