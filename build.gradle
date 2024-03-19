@@ -49,6 +49,7 @@ dependencies {
     testImplementation "net.serenity-bdd:serenity-core:${serenityVersion}"
     testImplementation "net.serenity-bdd:serenity-cucumber:${serenityVersion}"
     testImplementation "net.serenity-bdd:serenity-junit:${serenityVersion}"
+    testImplementation "net.serenity-bdd:serenity-screenplay-rest:${serenityVersion}"
     testImplementation "net.serenity-bdd:serenity-screenplay:${serenityVersion}"
     testImplementation "org.assertj:assertj-core:${assertJVersion}"
     testImplementation "org.jasypt:jasypt:${jasyptVersion}"
