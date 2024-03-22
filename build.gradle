@@ -58,6 +58,7 @@ dependencies {
     testImplementation "org.junit.platform:junit-platform-launcher:${junitPlatformLauncherVersion}"
     testImplementation "org.junit.platform:junit-platform-suite:${junitPlatformSuiteVersion}"
     testImplementation "org.junit.vintage:junit-vintage-engine:${junitPlatformSuiteVersion}"
+    testImplementation "org.json:json:20240303"
     testImplementation "org.slf4j:slf4j-nop:${slf4jVersion}"
     testImplementation "io.rest-assured:rest-assured:${restAssured}"
 }
