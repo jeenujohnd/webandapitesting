@@ -9,4 +9,4 @@ Feature: Brands feature
       Then the API should return 200 status code
       And the API should have 200 response code
       And the number of brands should be greater than 0
-#      And the brand element should have attributes "id" and "brand"
+      And the brands element should have attributes "id" and "brand"
