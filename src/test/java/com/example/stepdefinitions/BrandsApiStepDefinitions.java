@@ -3,6 +3,7 @@ package com.example.stepdefinitions;
 
 import ch.qos.logback.core.util.COWArrayList;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.restassured.response.Response;
 import net.bytebuddy.agent.VirtualMachine;
 import net.serenitybdd.rest.SerenityRest;
@@ -36,6 +37,11 @@ public class BrandsApiStepDefinitions {
         Set<String> attributes = brandArray.getJSONObject(0).keySet();
         System.out.println( attributes.toString());
         assert (attributes.contains(string)&&attributes.contains(string2));
+    }
+
+    @When("PUT request to \"([^\"]*)\"$")
+    public void put_request_to(String endpoint) {
+        SerenityRest.when().put(endpoint);
     }
 
 
