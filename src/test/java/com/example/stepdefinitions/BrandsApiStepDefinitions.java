@@ -1,20 +1,15 @@
 package com.example.stepdefinitions;
 
 
-import ch.qos.logback.core.util.COWArrayList;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.restassured.response.Response;
-import net.bytebuddy.agent.VirtualMachine;
 import net.serenitybdd.rest.SerenityRest;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.util.Iterator;
 import java.util.Set;
 
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
-import static net.serenitybdd.rest.SerenityRest.setDefaultRequestSpecification;
 
 
 public class BrandsApiStepDefinitions {
