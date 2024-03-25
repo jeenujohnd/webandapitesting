@@ -1,16 +1,10 @@
 package com.example.stepdefinitions;
 
-import com.example.apistep.ProductsApiSteps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.restassured.response.ResponseBody;
-import net.serenitybdd.annotations.Steps;
-
-import io.restassured.response.Response;
 
 import static net.serenitybdd.rest.SerenityRest.*;
-import static org.hamcrest.core.IsEqual.equalTo;
 
 
 import net.serenitybdd.rest.SerenityRest;
@@ -66,6 +60,27 @@ public class ProductsApiStepDefinitions {
         JSONObject jsonObject = new JSONObject(jsonStringBody);
         String message = (String) jsonObject.get("message");
         assert(message.equalsIgnoreCase(string));
+
+    }
+
+    @When("POST request to {string} with request parameter key {string} and value {string}")
+    public void post_request_to_with_request_parameter_key_and_value(String endpoint, String key, String value) {
+        SerenityRest.given()
+                .contentType("application/x-www-form-urlencoded")
+                .formParam(key, value)
+                .post(endpoint);
+    }
+    @Then("the products element should include value {string} in the key {string}")
+    public void the_products_element_should_include_value_in_the_attribute(String key, String value) {
+        String jsonString = SerenityRest.lastResponse().body().asString();
+        JSONObject jsonObject = new JSONObject(jsonString);
+        JSONArray productsArray =jsonObject.getJSONArray("products");
+        for(int i=0;i<productsArray.length();i++)
+        {
+            JSONObject product =productsArray.getJSONObject(i);
+            assert(product.keys().toString().contains(key)&&
+                   String.valueOf(product.get(key)).contains(value));
+        }
 
     }
 }
