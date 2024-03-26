@@ -28,6 +28,7 @@ public class ProductsApiStepDefinitions {
     @Then("the API should return {int} status code")
     public void the_api_should_return_status_code(int statusCode) {
         restAssuredThat(response->response.statusCode(statusCode));
+        System.out.println("Status code is: " +SerenityRest.lastResponse().statusCode());
 
 
     }
@@ -51,6 +52,7 @@ public class ProductsApiStepDefinitions {
         JSONObject jsonObject = new JSONObject(jsonStringBody);
         int responseCode=(int)jsonObject.get("responseCode");
         assert(responseCode==code);
+        System.out.println("Response code is: "+responseCode);
 
     }
 
@@ -60,6 +62,7 @@ public class ProductsApiStepDefinitions {
         JSONObject jsonObject = new JSONObject(jsonStringBody);
         String message = (String) jsonObject.get("message");
         assert(message.equalsIgnoreCase(string));
+        System.out.println("Response message is: " +message);
 
     }
 

@@ -23,6 +23,13 @@ Feature: Products API feature
     And the API should have 200 response code
     And the products element should include value "top" in the key "name"
 
+  Scenario: Post To Search Product without search_product parameter
+    Given the base URL "https://automationexercise.com"
+    When POST request to "https://automationexercise.com/api/searchProduct"
+    Then the API should return 200 status code
+    And the API should have 400 response code
+    And the response message should be "Bad request, search_product parameter is missing in POST request."
+
 
 
 
