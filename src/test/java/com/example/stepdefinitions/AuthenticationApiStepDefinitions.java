@@ -40,4 +40,13 @@ public class AuthenticationApiStepDefinitions {
                 .formParams(formParams)
                 .post(endpoint);
     }
+
+    @When("DELETE request to {string} with request parameters keys {string},{string} values {string}, {string}")
+    public void delete_request_to_with_request_parameters_keys_values(String endpoint, String email, String password, String emailID, String pwdVal) {
+       SerenityRest.given()
+               .contentType("application/x-www-form-urlencoded")
+               .formParams(email,emailID)
+               .formParams(password,pwdVal)
+               .delete(endpoint);
+    }
 }

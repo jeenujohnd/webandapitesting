@@ -10,6 +10,7 @@ import static net.serenitybdd.rest.SerenityRest.*;
 import net.serenitybdd.rest.SerenityRest;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.junit.Assert;
 
 public class ProductsApiStepDefinitions {
 
@@ -38,7 +39,7 @@ public class ProductsApiStepDefinitions {
         String jsonString= SerenityRest.lastResponse().getBody().asString();
         JSONObject jsonObject = new JSONObject(jsonString);
         JSONArray productArray = jsonObject.getJSONArray(string);
-        assert(productArray.length() > int1);
+        Assert.assertTrue(productArray.length() > int1);
     }
 
     @When("POST request to \"([^\"]*)\"$")
@@ -51,7 +52,7 @@ public class ProductsApiStepDefinitions {
         String jsonStringBody = SerenityRest.lastResponse().body().asString();
         JSONObject jsonObject = new JSONObject(jsonStringBody);
         int responseCode=(int)jsonObject.get("responseCode");
-        assert(responseCode==code);
+        Assert.assertTrue(responseCode==code);
         System.out.println("Response code is: "+responseCode);
 
     }
@@ -61,7 +62,7 @@ public class ProductsApiStepDefinitions {
         String jsonStringBody =SerenityRest.lastResponse().body().asString();
         JSONObject jsonObject = new JSONObject(jsonStringBody);
         String message = (String) jsonObject.get("message");
-        assert(message.equalsIgnoreCase(string));
+        Assert.assertTrue(message.equalsIgnoreCase(string));
         System.out.println("Response message is: " +message);
 
     }
@@ -81,7 +82,7 @@ public class ProductsApiStepDefinitions {
         for(int i=0;i<productsArray.length();i++)
         {
             JSONObject product =productsArray.getJSONObject(i);
-            assert(product.keys().toString().contains(key)&&
+            Assert.assertTrue(product.keys().toString().contains(key)&&
                    String.valueOf(product.get(key)).contains(value));
         }
 

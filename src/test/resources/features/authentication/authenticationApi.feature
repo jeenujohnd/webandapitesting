@@ -34,26 +34,18 @@ Feature: Authentication feature to validate valid login
   Scenario: Post To Create/Register User Account
       Given the base URL "https://automationexercise.com"
       When POST request to "https://automationexercise.com/api/createAccount" with request parameters
-      | name     | Jeet     |
-      | email    | preet@gmail.com    |
-      | password | mmmm1234 |
-      | title    |  Mr     |
-      | birth_date| 22   |
-      |birth_month| 07    |
-      |birth_year | 1950   |
-      | firstname | Jeetendra  |
-      | lastname  |Singh   |
-      | company   | Surplus   |
-      | address1  | Free   |
-      | address2  | Bird   |
-      | country   | Canada  |
-      | zipcode   | 77889   |
-      | state     | Toranto  |
-      | city      | Cross   |
-      | mobile_number | 998877665|
+      | name | email            | password | title  | birth_date    | birth_month   | birth_year    | firstname | lastname  | company   | address1  | address2  | country   | zipcode   | state     | city  | mobile_number |
+      | Mon | Mon@gmail.com  | mmmm1234 | Mr     | 22            | 07            |  1950         | Jeetendra | Singh     | Surplus   | Free      | Bird      | Canada    | 77889     | Toranto   | Cross | 998877665     |
       Then the API should return 200 status code
       And the API should have 201 response code
       And the response message should be "User created!"
+
+  Scenario: Delete method To Delete User Account
+      Given the base URL "https://automationexercise.com"
+      When DELETE request to "https://automationexercise.com/api/deleteAccount" with request parameters keys "email","password" values "Mon@gmail.com", "mmmm1234"
+      Then the API should return 200 status code
+      And the API should have 200 response code
+      And the response message should be "Account deleted!"
 
 
 
