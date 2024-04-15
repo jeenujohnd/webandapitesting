@@ -27,6 +27,12 @@ Project Modules included are :
 
 Note: This website includes ads, which have been blocked using AdBlock plugin.
 
+# Automated UI Test case 
+| Feature | Scenario |
+----------------------
+|Authentication feature | Login with Valid Credentials |
+
+
  
 
 
