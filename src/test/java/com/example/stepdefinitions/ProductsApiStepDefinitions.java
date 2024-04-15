@@ -75,7 +75,7 @@ public class ProductsApiStepDefinitions {
                 .post(endpoint);
     }
     @Then("the products element should include value {string} in the key {string}")
-    public void the_products_element_should_include_value_in_the_attribute(String key, String value) {
+    public void the_products_element_should_include_value_in_the_attribute(String value, String key) {
         String jsonString = SerenityRest.lastResponse().body().asString();
         JSONObject jsonObject = new JSONObject(jsonString);
         JSONArray productsArray =jsonObject.getJSONArray("products");
