@@ -1,5 +1,8 @@
 # Web And API Automation Testing  
 
+# Automation Exercise Home Page
+![homepage](https://github.com/jeenujohnd/webandapitesting/issues/1)
+
 ## Tools  
 Conducted a Web and API automation testing project using:  
 -IntelliJ IDEA  
