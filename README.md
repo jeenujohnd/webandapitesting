@@ -4,8 +4,11 @@
 ![homepage](https://private-user-images.githubusercontent.com/144407851/322608594-4c99c307-ae30-4953-b4c9-fca65ed953e4.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTMyMTU5MzQsIm5iZiI6MTcxMzIxNTYzNCwicGF0aCI6Ii8xNDQ0MDc4NTEvMzIyNjA4NTk0LTRjOTljMzA3LWFlMzAtNDk1My1iNGM5LWZjYTY1ZWQ5NTNlNC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDE1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQxNVQyMTEzNTRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xMDJiMGZiZGI1MmQ4MmE4OTg2OGIwNTA3NzllOWFiNDBkMzIwNmFkOWM1MGY2NmNkMWMzNjVlMzYzNTg4ZmMwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.q-GJTaIszdGF-fIcm56R-HiLHKaAOaYOkVFj77PcbUI)
 
 ## About the Project
-The project is based on automating tests of an e-commerce website https://www.automationexercise.com/ . The tests have been run on Chrome browser.  
-The website also includes a list of API's that have been automated using RESTAssured.  
+The project is based on automating UI test cases of an e-commerce website https://www.automationexercise.com/.   
+The tests have been run on Chrome browser. 
+
+The website also includes a list of API's that have been automated using RESTAssured.
+
 Project Modules included are :
 - Authentication
 - Cart
