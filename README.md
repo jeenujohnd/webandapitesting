@@ -3,29 +3,34 @@
 # Automation Exercise Home Page
 ![homepage](https://private-user-images.githubusercontent.com/144407851/322608594-4c99c307-ae30-4953-b4c9-fca65ed953e4.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTMyMTU5MzQsIm5iZiI6MTcxMzIxNTYzNCwicGF0aCI6Ii8xNDQ0MDc4NTEvMzIyNjA4NTk0LTRjOTljMzA3LWFlMzAtNDk1My1iNGM5LWZjYTY1ZWQ5NTNlNC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDE1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQxNVQyMTEzNTRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xMDJiMGZiZGI1MmQ4MmE4OTg2OGIwNTA3NzllOWFiNDBkMzIwNmFkOWM1MGY2NmNkMWMzNjVlMzYzNTg4ZmMwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.q-GJTaIszdGF-fIcm56R-HiLHKaAOaYOkVFj77PcbUI)
 
-## Tools  
-Conducted a Web and API automation testing project using:  
--IntelliJ IDEA  
--Selenium WebDriver 4.16.1  
--Serenity BDD 4.0.43  
--Cucumber 7.14.0  
--Gradle 8.4  
--Java 17  
--RestAssured 5.3.2
-
 ## About the Project
 The project is based on automating tests of an e-commerce website https://www.automationexercise.com/ . The tests have been run on Chrome browser.  
 The website also includes a list of API's that have been automated using RESTAssured.  
-Project Modules included are :  
--Authentication  
--Cart  
--Products  
--Brands  
--Category  
--Search   
--Contact Us Form
+Project Modules included are :
+- Authentication
+- Cart
+- Products
+- Brands
+- Category
+- Search
+- Contact Us Form
 
 Note: This website includes ads, which have been blocked using AdBlock plugin.
+
+## Tools  
+Conducted a Web and API automation testing project using:  
+
+|Tool   |Version    |
+|-------|-----------|
+|IntelliJ IDEA |2023.3.3|
+|Selenium WebDriver|4.16.1 |
+|Serenity BDD|4.0.43|
+|Cucumber|7.14.0 |
+|Gradle|8.4|
+|Java|17|
+|RestAssured|5.3.2|
+
+
 
 ## Automated UI Test case 
 
